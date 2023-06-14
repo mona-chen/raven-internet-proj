@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Raven Internet</title>
+</head>
+
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+    </script>
+    $(endif)
+    <div class="page-wrapper">
+        <div class="internet-page">
+            <div class="internet-page__logo logo__with-guide">
+                <figure onclick="navigate('./landing.html')">
+                    <img src="./assets/logo_white.svg" alt="">
+                </figure>
+                <figure onclick="navigate('./guide.html')" class="logo__guide-mobile">
+                    <img src="./assets/guide.svg" alt="guide">
+                    <p>Guide</p>
+                </figure>
+            </div>
+
+            <div class="internet-page__title">
+                <p>Enjoy Free Internet When</p>
+                <p>you use <span style="opacity: 80%">RavenBank.</span></p>
+            </div>
+
+            <div class="internet-page__title-mobile">
+                <p>Enjoy Free Internet
+                    when you use
+                    <b>
+                        Ra<img src="./assets/vee.svg" alt="">enBank
+                </p>
+                </b>
+
+            </div>
+
+            <p class="info $(if error)alert$(endif)">
+                $(if error == "") $(if trial == 'yes')<br /> <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"> <button class="internet-page__button">
+                    <p>Connect</p>
+                    <figure>
+                        <img src="./assets/arrow-right.svg" alt="">
+                    </figure>
+                </button></a>.$(endif)
+                $(endif)
+
+                $(if error)$(error)$(endif)
+            </p>
+           
+
+            <figure onclick="navigate('./guide.html')" class="internet-page__instruction">
+                <img src="./assets/guide.svg" alt="guide">
+                <p>See Connection Instructions</p>
+            </figure>
+
+            <div class="internet-page__bottom">
+                <p><b>Raven Bank:</b> The people bank of Africa</p>
+                <a href="https://onelink.to/3b25tr" class="bottom__store-img">
+                    <img src="./assets//google_play.svg" alt="">
+                    <img src="./assets//app_store.svg" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+<script>
+    function navigate(e) {
+        window.location.href = e; // Replace 'new-page.html' with the URL of the destination page
+    }
+</script>
+
+</html>

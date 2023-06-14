@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Raven Internet</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="internet-page">
+            <div class="internet-page__logo logo__with-guide">
+                <figure onclick="navigate('./landing.html')">
+                    <img src="./assets/logo_white.svg" alt="">
+                </figure>
+                <figure onclick="navigate('./guide.html')" class="logo__guide-mobile">
+                    <img src="./assets/guide.svg" alt="guide">
+                    <p>Guide</p>
+                </figure>
+            </div>
+
+            <div class="internet-page__title">
+                <p>Enjoy Free Internet When</p>
+                <p>you use <span style="opacity: 80%">RavenBank.</span></p>
+            </div>
+
+            <div class="internet-page__title-mobile">
+                <p>Enjoy Free Internet
+                    when you use
+                    <b>
+                        Ra<img src="./assets/vee.svg" alt="">enBank
+                </p>
+                </b>
+
+            </div>
+
+            <button onclick="navigate('./connect.html')" class="internet-page__button">
+                <p>Connect</p>
+                <figure>
+                    <img src="./assets/arrow-right.svg" alt="">
+                </figure>
+            </button>
+
+            <figure onclick="navigate('./guide.html')" class="internet-page__instruction">
+                <img src="./assets/guide.svg" alt="guide">
+                <p>See Connection Instructions</p>
+            </figure>
+
+            <div class="internet-page__bottom">
+                <p><b>Raven Bank:</b> The people bank of Africa</p>
+                <div class="bottom__store-img">
+                    <img src="./assets//google_play.svg" alt="">
+                    <img src="./assets//app_store.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+<script>
+    function navigate(e) {
+        window.location.href = e; // Replace 'new-page.html' with the URL of the destination page
+    }
+</script>
+
+</html>

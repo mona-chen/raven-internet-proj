@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+    </script>
+    $(endif)
+    <div class="page-wrapper">
+        <div class="internet-page guide">
+            <div class="internet-page__logo">
+                <figure onclick="navigate('./landing.html')">
+                    <img src="./assets/logo_white.svg" alt="">
+                </figure>
+            </div>
+
+            <div class="internet-page__connection-wrapper">
+            
+
+                <div class="guide__welcome">
+                    <p>Welcome to</p>
+                    <span>Raven Free Internet</span>
+                </div>
+
+                <div class="guide__steps">
+                    <p class="steps__title">STEPS TO CONNECT</p>
+                    <div class="steps__wrap">
+                        <div class="wrap__item">
+                            <figure></figure>
+                            <p>Click on the 3 dots on the top-right corner of this page.</p>
+                        </div>
+                        <div class="wrap__item">
+                            <figure></figure>
+                            <p>Click on ‘Use Network as is’ on an Android phone</p>
+                        </div>
+                        <div class="wrap__item">
+                            <figure></figure>
+                            <p>Click on ‘Continue without Internet’ on an iOS device</p>
+                        </div>
+    
+                        <div class="wrap__item">
+                            <figure></figure>
+                            <p>Then Open the settings page on your Raven App</p>
+                        </div>
+    
+                        <div class="wrap__item">
+                            <figure></figure>
+                            <p>Click on “feather Internet” to activate fast Internet on your phone.</p>
+                        </div>
+                    </div>
+
+                    <div class="steps__download-notice">
+                        <p>You can download Raven app from the app stores by using the button below.</p>
+                    </div>
+
+                   
+                    <div class="steps__store-img">
+                        <img src="./assets//google_play.svg" alt="">
+                        <img src="./assets//app_store.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="internet-page__bottom">
+                <p>Raven Bank: The people bank of Africa</p>
+                <div class="bottom__store-img">
+                    <img src="./assets//google_play.svg" alt="">
+                    <img src="./assets//app_store.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+<script>
+    function navigate(e) {
+        window.location.href = e; // Replace 'new-page.html' with the URL of the destination page
+    }
+</script>
+
+</html>

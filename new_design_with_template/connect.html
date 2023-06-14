@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Raven Internet - Connect</title>
+
+    <script>
+
+        $(if advert-pending == 'yes')
+            var popup = '';
+            function focusAdvert() {
+            if (window.focus) popup.focus();
+            }
+            function openAdvert() {
+            popup = open('$(link-advert)', 'hotspot_advert', '');
+            setTimeout("focusAdvert()", 1000);
+            }
+        $(endif)
+            function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+                open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+            }
+        </script>
+</head>
+
+<body  $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
+    
+   
+    <div class="page-wrapper">
+        <div class="internet-page">
+            <div class="internet-page__logo">
+                <figure onclick="navigate('./landing.html')">
+                    <img src="./assets/logo_white.svg" alt="">
+                </figure>
+            </div>
+
+            <div class="internet-page__connection-wrapper">
+                <div class="connection-wrapper__username">
+                    <p>Welcome</p>
+                    $(if login-by == 'trial')
+                    <p style="opacity: 75%;">Hi, Trial User!</p>
+                $(elif login-by != 'mac')
+                <p style="opacity: 75%;">Hi, $(username)!</p>
+                $(endif)               
+
+                </div>
+                <div class="connection-wrapper__connection">
+
+                    <div class="connection__item">
+                        <p>IP Address</p>
+                        <p>172.20.0.17</p>
+                    </div>
+                    <div class="connection__item">
+                        <p>Bytes up / down</p>
+                        <p>$(bytes-in-nice) / $(bytes-out-nice)</p>
+                    </div>
+                    <div class="connection__item">
+                        $(if session-time-left)
+                        <p>Connected/left</p>
+                        <p>$(uptime) / $(session-time-left)</p>
+                        $(else)
+                        <p>Connected</p>
+                        <p>$(uptime)</p>
+                    </div>
+                    $(elif refresh-timeout)
+                    <div class="connection__item">
+                        <p>Status Refresh</p>
+                        <p>$(refresh-timeout)</p>
+                    </div>
+                    $(endif)
+
+                    <button onclick="navigate('./login.html')" class="internet-page__button connection__button">
+                        <span class="connection-button__label">Logout</span>
+                        <figure>
+                            <img src="./assets/arrow-right.svg" alt="">
+                        </figure>
+                    </button>
+                </div>
+            </div>
+
+            <div class="internet-page__bottom">
+                <p>Raven Bank: The people bank of Africa</p>
+                <div class="bottom__store-img">
+                    <img src="./assets//google_play.svg" alt="">
+                    <img src="./assets//app_store.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+<script>
+    function navigate(e) {
+        window.location.href = e; // Replace 'new-page.html' with the URL of the destination page
+    }
+</script>
+
+</html>
