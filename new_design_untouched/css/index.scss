@@ -227,6 +227,7 @@ body {
       .internet-page__logo {
         width: 100%;
         display: grid;
+        height: 8%;
         place-items: center;
         padding: 1.5rem;
         border-bottom: 1px solid rgba(219, 213, 251, 0.35);
@@ -570,11 +571,21 @@ body {
 
 // mobile responsiveness
 
-@media only screen and (max-width: 40em) {
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+
   .page-wrapper {
+    display: flex;
+   background-color: yellow;
 
     .internet-page {
+      display: flex;
+
+      height: unset;
+      flex:1;
       background-size: contain;
+      // background-color: red;
+
+      background-size: 70%;
       background-image: url('../assets/landing_illustration_mobile.svg');
 
       .internet-page__title {
@@ -614,12 +625,14 @@ body {
       .logo__with-guide {
       display: flex;  
       gap: 60%;
+      height: 8%;
       padding-left: 3rem; 
       padding-right: 3rem;;
       align-items: center;
       
       .logo__guide-mobile {
         width: 3rem;
+        visibility: hidden;
         display: flex;
         gap: 1rem;
         
