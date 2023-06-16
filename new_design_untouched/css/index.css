@@ -153,7 +153,6 @@ body {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 65rem;
-  background-image: url("../assets/landing_illustration.png");
 }
 .page-wrapper .internet-page .internet-page__logo {
   width: 100%;
@@ -449,7 +448,6 @@ body {
     flex: 1;
     background-size: contain;
     background-size: 70%;
-    background-image: url("../assets/landing_illustration_mobile.svg");
   }
   .page-wrapper .internet-page .internet-page__title {
     display: none;
@@ -568,7 +566,6 @@ body {
     flex: 1;
     background-size: contain;
     background-size: 70%;
-    background-image: url("../assets/landing_illustration_mobile.svg");
   }
   .page-wrapper .internet-page .internet-page__title {
     display: none;
@@ -688,7 +685,6 @@ body {
     flex: 1;
     background-size: contain;
     background-size: 70%;
-    background-image: url("../assets/landing_illustration_mobile.svg");
   }
   .page-wrapper .internet-page .internet-page__title {
     display: none;
@@ -808,7 +804,6 @@ body {
     flex: 1;
     background-size: contain;
     background-size: 70%;
-    background-image: url("../assets/landing_illustration_mobile.svg");
   }
   .page-wrapper .internet-page .internet-page__title {
     display: none;
@@ -927,7 +922,6 @@ body {
     flex: 1;
     background-size: contain;
     background-size: 70%;
-    background-image: url("../assets/landing_illustration_mobile.svg");
   }
   .page-wrapper .internet-page .internet-page__title {
     display: none;

@@ -586,7 +586,8 @@ body {
       // background-color: red;
 
       background-size: 70%;
-      background-image: url('../assets/landing_illustration_mobile.svg');
+      background-image: unset;
+      // background-image: url('../assets/landing_illustration_mobile.svg');
 
       .internet-page__title {
         display: none ;
@@ -718,6 +719,7 @@ body {
     
     }
   }
+  
  
   .wrap__item {
 
@@ -745,7 +747,8 @@ body {
           // background-color: red;
     
           background-size: 70%;
-          background-image: url('../assets/landing_illustration_mobile.svg');
+          background-image: unset;
+          // background-image: url('../assets/landing_illustration_mobile.svg');
     
           .internet-page__title {
             display: none ;
